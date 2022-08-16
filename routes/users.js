@@ -45,7 +45,7 @@ router.get("/:id/verify/:token", async(req,res) =>{
 		if(!user) return res.status(400).send({message: "Invalid Link"})
 
 		const token = await Token.findOne({
-			userId: user_.id,
+			userId: user._id,
 			token: req.params.token
 		})
 		if(!token) return res.status(400).send({message: "Invalid Link"})
