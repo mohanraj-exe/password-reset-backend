@@ -6,7 +6,7 @@ const {Token} = require("../models/Token");
 const sendEmail = require("../utils/sendEmail");
 const crypto = require("crypto")
 
-router.post("/", async (req, res) => {
+router.post("/", async (req, res, next) => {
     try {
         const { error } = validate(req.body);
 		if (error)
@@ -37,6 +37,7 @@ router.post("/", async (req, res) => {
 	} catch (error) {
 		res.status(500).send({ message: "Internal Server Error" });
 	}
+	next()
 });
 
 router.get("/:id/verify/:token", async(req,res) =>{
