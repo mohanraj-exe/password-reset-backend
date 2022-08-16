@@ -28,7 +28,7 @@ router.post("/", async (req, res) => {
 			token: crypto.randomBytes(32).toString("hex")
 		}).save()
 
-		const url = `${process.env.BASE_URL}/users/${user._id}/verify/${token.token}`
+		const url = `${process.env.BASE_URL}users/${user._id}/verify/${token.token}`
 		await sendEmail(user.email, "Verify Email", url)
 
 		res.status(201).send({ message: "Verification Mail to your Email Address" });
