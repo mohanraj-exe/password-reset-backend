@@ -2,7 +2,7 @@ const { User, validate } = require("../models/User");
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
-const Token = require("../models/Token")
+const {Token} = require("../models/Token");
 const sendEmail = require("../utils/sendEmail");
 const crypto = require("crypto")
 

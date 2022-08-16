@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User } = require("../models/User");
-const Token = require("../models/Token");
+const { Token } = require("../models/Token");
 const crypto = require("crypto");
 const sendEmail = require("../utils/sendEmail");
 const Joi = require("joi");

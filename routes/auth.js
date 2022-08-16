@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const Joi = require("joi");
-const Token = require("../models/Token")
+const { Token } = require("../models/Token")
 const sendEmail = require("../utils/sendEmail");
 const crypto = require("crypto")
 

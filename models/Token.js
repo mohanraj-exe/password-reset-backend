@@ -12,4 +12,5 @@ const tokenSchema = new Schema({
     createdAt: {type: Date, default: Date.now(), expires: 3600}
 })
 
-module.exports = mongoose.model("token" ,tokenSchema)
+const Token = mongoose.model("token" ,tokenSchema)
+module.exports = {Token}
